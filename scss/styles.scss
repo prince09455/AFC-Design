@@ -1,0 +1,251 @@
+@import "./vars.scss";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+$mobile: map-get($grid-breakpoints, "sm");
+$tablet: 1300px;
+* {
+    padding: 0;
+    margin: 0;
+    color: $color-black;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 60px;
+    @media (max-width: $mobile) {
+        font-size: 32px;
+        line-height: 45px;
+    }
+}
+
+.row {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 60px;
+}
+
+.logo {
+    padding: 8px 30px;
+    background: $color-black;
+    font-size: $font-medium;
+    color: $color-white;
+}
+
+.nav-item a {
+    margin: 0px 20px;
+}
+
+.btn-main {
+    color: $color-white;
+}
+
+p {
+    font-size: 16px;
+    &.highlight {
+        font-size: $font-medium;
+    }
+    &.large {
+        font-size: 24px;
+    }
+}
+
+a.link {
+    >* {
+        color: $color-white;
+        font-size: $font-medium;
+    }
+    >span {
+        text-decoration: underline;
+    }
+    >i {
+        margin-left: 10px;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.form-wrapper {
+    margin-left: 6rem;
+    max-width: 600px;
+    padding: 0 100px;
+    input {
+        font-size: 24px;
+        padding: 20px;
+        height: 64px;
+        border-radius: 8px;
+        box-shadow: $shadow;
+        opacity: 0.8;
+        transition: all 0.3s;
+        &:not(:last-child) {
+            margin-bottom: 80px;
+        }
+        &:focus {
+            opacity: 1;
+        }
+    }
+    @media(max-width: $tablet) {
+        padding: 0 20px;
+        margin-left: 2rem;
+    }
+}
+
+.card-mmt {
+    background-image: url(../Images/card-bg.png);
+    background-size: 100% 100%;
+    padding: 0 35px;
+    border-radius: 10px;
+    height: 26rem;
+    width: 22rem;
+}
+
+.atm-card {
+    width: 420px;
+    height: 260px;
+    background: url(../Images/background-1.png);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    padding: 20px;
+    box-shadow: $shadow;
+    background-size: 100% 100%;
+}
+
+.atm-card-bg {
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 2px;
+    img {
+        width: 100%;
+    }
+}
+
+.section-faq {
+    .card {
+        border: none;
+        &:not(:first-of-type) {
+            border-top: $border-container-color;
+        }
+        &:last-of-type {
+            border-bottom: $border-container-color;
+        }
+    }
+    @media(max-width: $mobile) {
+        .text-main {
+            text-align: left!important;
+        }
+    }
+}
+
+footer {
+    h3 {
+        font-size: 35px;
+        font-weight: normal;
+    }
+    p {
+        font-weight: lighter;
+    }
+    ul.footer-list {
+        list-style: none;
+        li {
+            margin-top: 1rem;
+            a {
+                text-decoration: none;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+@media (max-width:$mobile) {
+    h2 {
+        font-size: 18px;
+        line-height: 21px;
+    }
+    p.large {
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: normal;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 150%;
+    }
+    .section-about {
+        .row {
+            select {
+                max-width: 65% !important;
+            }
+            button {
+                background: rgba($color-black, 0.6);
+                color: $color-white;
+            }
+        }
+        @media(max-width: $mobile) {
+            .container>.row {
+                padding-top: 0!important;
+                padding-bottom: 0!important;
+            }
+        }
+    }
+}
+
+.section-banner {
+    @media (max-width: $mobile) {
+        button {
+            width: 70%;
+            margin-left: 15%;
+        }
+        .row>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            p,
+            h1 {
+                text-align: center;
+            }
+        }
+        img {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.section-form {
+    @media (max-width: $mobile) {
+        a.link > * {
+            color: $color-black !important;
+        }
+    }
+}
+
+.section-card,
+.section-reward {
+    @media (max-width: $mobile) {
+        a.link > * {
+            color: $color-black !important;
+        }
+    }
+}
+
+.section-reward {
+    @media (max-width: $mobile) {
+        .row {
+            flex-direction: column-reverse;
+            .about-reward {
+                padding: 30px;
+                background: $color-white;
+                margin: 0 !important;
+                padding-bottom: 30px !important;
+            }
+        }
+    }
+}
+
+.section-card {
+    .atm-card-bg {
+        cursor: pointer;
+    }
+}
